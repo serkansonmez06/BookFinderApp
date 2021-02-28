@@ -1,10 +1,8 @@
-
 import React from "react";
 import { Container, Footer } from "mdbreact"; //imported icons
-import "../App.css";
-import "react-mdl/extra/material.css";
 
-function FooterComp() {
+
+function FooterComponent() {
   return (
     <Footer
       color="stylish-color-dark"
@@ -12,7 +10,7 @@ function FooterComp() {
       id="footerStyle"
     >
       <div className="text-center">
-        <ul className="list list-inline">
+        <ul className="list-unstyled list-inline">
           <li className="list-inline-item">
             <a
               className="btn-floating btn-sm btn-fb mx-1"
@@ -20,7 +18,7 @@ function FooterComp() {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa fa-facebook"> </i>
+              <i className="fa fa-facebook" > </i>
             </a>
           </li>
           <li className="list-inline-item">
@@ -66,4 +64,4 @@ function FooterComp() {
   );
 }
 
-export default FooterComp;
+export default FooterComponent;
