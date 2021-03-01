@@ -9,25 +9,25 @@ class WelcomeComponent extends Component {
            welcomeMessage: '' 
         }
     }
-    // retrieveWelcomeMessage=()=>{
+    retrieveWelcomeMessage=()=>{
        
 
-    //     HelloWorldService.executeHelloWorldPathVariableService(this.props.match.params.name)
-    //     .then(response => this.handleSuccesfulResponse(response))
-    //     .catch(error => this.handleError(error))
-    // }
-    // handleSuccesfulResponse=(response)=>{
-    //     this.setState({
-    //         welcomeMessage: response.data.message
-    //     })
+        HelloWorldService.executeHelloWorldPathVariableService(this.props.match.params.name)
+        .then(response => this.handleSuccesfulResponse(response))
+        .catch(error => this.handleError(error))
+    }
+    handleSuccesfulResponse=(response)=>{
+        this.setState({
+            welcomeMessage: response.data.message
+        })
        
-    // }
-    // handleError=(error)=>{
-    //     console.log(error.response)
-    //     this.setState({
-    //         welcomeMessage: error.response.data.message
-    //     })
-    // }
+    }
+    handleError=(error)=>{
+        console.log(error.response)
+        this.setState({
+            welcomeMessage: error.response.data.message
+        })
+    }
 
   render() {
     return (
@@ -41,10 +41,10 @@ class WelcomeComponent extends Component {
         </div>
         <div>
         
-{/*  
+ 
         <div className="container">
               {this.state.welcomeMessage}
-        </div> */}
+        </div>
     </div>
     
     </div>

@@ -3,15 +3,17 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import WelcomeComponent from "./WelcomeComponent"
 import LoginComponent from "./LoginComponent"
 import ErrorComponent from "./ErrorComponent"
-import ListTodosComponent from "./ListTodosComponent"
+import NotesComponent from "./NotesComponent"
 import HeaderComponent from "./HeaderComponent";
 import FooterComponent from "./FooterComponent";
 import LogoutComponent from "./LogoutComponent";
 import AuthenticatedRoute from './AuthenticatedRoute'
-import TodoComponent from './TodoComponent'
 import SearchComponent from './SearchComponent'
+import ContactComponent from './ContactComponent'
+import AboutDeveloperComponent from './AboutDeveloperComponent'
+import TodoComponent from './TodoComponent'
 
-class ToDoApp extends Component {
+class DisplayComponent extends Component {
   render() {
     return (
       <div>
@@ -23,9 +25,11 @@ class ToDoApp extends Component {
               
               <AuthenticatedRoute exact path="/welcome/:name" render={(props) => <WelcomeComponent {...props}/>}/>
               <AuthenticatedRoute  excat path="/todos/:id" render={(props) => <TodoComponent {...props}/>}/>
-              <AuthenticatedRoute exact path="/todos" component={ListTodosComponent}/>
+              <AuthenticatedRoute exact path="/todos" component={NotesComponent}/>
               <AuthenticatedRoute excat path="/search" component={SearchComponent}/>
               <AuthenticatedRoute excat path="/logout" component={LogoutComponent}/>
+              <AuthenticatedRoute excat path="/aboutme" component={AboutDeveloperComponent}/>
+              <AuthenticatedRoute excat path="/contact" component={ContactComponent}/>
               
               <AuthenticatedRoute exact component={ErrorComponent}/>
               </Switch>
@@ -43,4 +47,4 @@ class ToDoApp extends Component {
 
 
 
-export default ToDoApp;
+export default DisplayComponent;

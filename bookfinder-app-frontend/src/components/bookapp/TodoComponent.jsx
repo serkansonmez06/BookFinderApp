@@ -20,7 +20,7 @@ class TodoComponent extends Component {
     }
 
     let username = AuthenticationService.getLoggedInUserName();
-    TodoDataService.retriveAllTodo(username, this.state.id).then((response) =>
+    TodoDataService.retrieveAllTodos(username, this.state.id).then((response) =>
       this.setState({
         description: response.data.description,
         targetDate: moment(response.data.targetDate).format("YYYY-MM-DD"),

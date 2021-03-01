@@ -21,8 +21,10 @@ function SearchComponent() {
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
   // Handle Search
+
+
   const handleSubmit = () => {
-    setLoading(true);
+    // setLoading(true);
     console.log("test")
     
       axios
@@ -68,6 +70,7 @@ function SearchComponent() {
               <button color='secondary' onClick={handleSubmit} className="btn btn-success">
                 Search
               </button>
+           
             </InputGroupAddon>
 
           </InputGroup>

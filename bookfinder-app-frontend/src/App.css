@@ -66,3 +66,10 @@ i {
 .max-min {
     color: black;
 }
+
+.form {
+    width: 70%;
+    margin: 40px;
+    margin-left: 190px;
+    margin-bottom: 10px;
+}
