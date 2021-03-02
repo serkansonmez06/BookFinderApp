@@ -73,3 +73,33 @@ i {
     margin-left: 190px;
     margin-bottom: 10px;
 }
+
+.aboutme {
+    text-align: center;
+    margin-top: 90px;
+    margin-right: 160px;
+    margin-left: 100px;
+}
+
+.name {
+    color: rgb(240, 145, 82)
+}
+
+.display {
+    background-color: rgb(193, 207, 248);
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+.form {
+    margin-top: 60px;
+}
+
+.container {
+    margin-top: 90px;
+}
+
+.welcomename {
+    font-size: 30px;
+    color: rebeccapurple
+}

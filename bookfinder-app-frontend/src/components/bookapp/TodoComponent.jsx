@@ -11,6 +11,7 @@ class TodoComponent extends Component {
     this.state = {
       id: this.props.match.params.id,
       description: "",
+   
       targetDate : moment(new Date()).format('YYYY-MM-DD')
     };
   }
@@ -48,6 +49,7 @@ class TodoComponent extends Component {
     let todo = {
       id: this.state.id,
       description: values.description,
+      
       targetDate: values.targetDate,
     };
 
@@ -73,7 +75,7 @@ class TodoComponent extends Component {
         <h1>Todo</h1>
         <div className="container">
           <Formik
-            initialValues={{ description, targetDate }}
+            initialValues={{ description , targetDate }}
             onSubmit={this.onSubmit}
             validateOnChange={false}
             validateOnBlur={false}
@@ -92,8 +94,10 @@ class TodoComponent extends Component {
                   component="div"
                   className="alert alert-warning"
                 />
+              
+
                 <fieldset className="form-group">
-                  <label>Author</label>
+                  <label>Description</label>
                   <Field
                     className="form-control"
                     type="text"

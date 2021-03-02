@@ -10,13 +10,13 @@ import LogoutComponent from "./LogoutComponent";
 import AuthenticatedRoute from './AuthenticatedRoute'
 import SearchComponent from './SearchComponent'
 import ContactComponent from './ContactComponent'
-import AboutDeveloperComponent from './AboutDeveloperComponent'
+import AboutMe from './AboutMe'
 import TodoComponent from './TodoComponent'
 
 class DisplayComponent extends Component {
   render() {
     return (
-      <div>
+      <div className="display">
           <Router>  
             <HeaderComponent/>
             <Switch>
@@ -28,7 +28,7 @@ class DisplayComponent extends Component {
               <AuthenticatedRoute exact path="/todos" component={NotesComponent}/>
               <AuthenticatedRoute excat path="/search" component={SearchComponent}/>
               <AuthenticatedRoute excat path="/logout" component={LogoutComponent}/>
-              <AuthenticatedRoute excat path="/aboutme" component={AboutDeveloperComponent}/>
+              <AuthenticatedRoute excat path="/aboutme" component={AboutMe}/>
               <AuthenticatedRoute excat path="/contact" component={ContactComponent}/>
               
               <AuthenticatedRoute exact component={ErrorComponent}/>
@@ -36,7 +36,7 @@ class DisplayComponent extends Component {
               <FooterComponent/>
           </Router>
        
-        {/* <WelcomeComponent/> */}
+       
       </div>
     );
   }

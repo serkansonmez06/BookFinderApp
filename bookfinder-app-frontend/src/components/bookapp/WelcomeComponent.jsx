@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import HelloWorldService from "../../api/todo/HelloWorldService"
+// import HelloWorldService from "../../api/todo/HelloWorldService"
 class WelcomeComponent extends Component {
     constructor(props){
         super(props)
@@ -9,13 +9,7 @@ class WelcomeComponent extends Component {
            welcomeMessage: '' 
         }
     }
-    retrieveWelcomeMessage=()=>{
-       
-
-        HelloWorldService.executeHelloWorldPathVariableService(this.props.match.params.name)
-        .then(response => this.handleSuccesfulResponse(response))
-        .catch(error => this.handleError(error))
-    }
+  
     handleSuccesfulResponse=(response)=>{
         this.setState({
             welcomeMessage: response.data.message
@@ -32,20 +26,14 @@ class WelcomeComponent extends Component {
   render() {
     return (
         <div>
-        <div>
+        <div className="container">
             <h1>Welcome!</h1>
-            <div className="container">
+            <div className="welcomename">
            {this.props.match.params.name}
            
             </div>
         </div>
-        <div>
-        
- 
-        <div className="container">
-              {this.state.welcomeMessage}
-        </div>
-    </div>
+    
     
     </div>
     )        
