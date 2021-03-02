@@ -8,7 +8,6 @@ const BookCard = ({
   description,
   authors,
   publisher,
-  previewLink,
   infoLink
 }) => {
   // States

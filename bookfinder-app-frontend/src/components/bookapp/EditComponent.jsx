@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import TodoDataService from "../../api/todo/TodoDataService";
 import AuthenticationService from "./AuthenticationService";
 
-class TodoComponent extends Component {
+class EditComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -55,11 +55,11 @@ class TodoComponent extends Component {
 
     if (this.state.id === -1) {
       TodoDataService.createTodo(username, todo).then(() =>
-        this.props.history.push("/todos")
+        this.props.history.push("/notes")
       );
     } else {
       TodoDataService.updateTodo(username, this.state.id, todo).then(() =>
-        this.props.history.push("/todos")
+        this.props.history.push("/notes")
       );
     }
 
@@ -72,8 +72,8 @@ class TodoComponent extends Component {
 
     return (
       <div>
-        <h1>Todo</h1>
-        <div className="container">
+        {/* <h1>Todo</h1> */}
+        <div className="container" id="tododescription">
           <Formik
             initialValues={{ description , targetDate }}
             onSubmit={this.onSubmit}
@@ -124,4 +124,4 @@ class TodoComponent extends Component {
   }
 }
 
-export default TodoComponent;
+export default EditComponent;

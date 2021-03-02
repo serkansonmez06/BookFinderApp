@@ -11,8 +11,8 @@ class HeaderComponent extends Component {
                 <nav className="navbar navbar-expand-md ">
                     <div> <span className="headertitle"> <img src={"https://image.flaticon.com/icons/png/512/130/130304.png"} height="40px" width="30px"/></span></div>
                     <ul className="navbar-nav">
-                        {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/serkan"><span className="headertitle">Home</span></Link></li>}
-                        {isUserLoggedIn && <li><Link className="nav-link" to="/todos"><span className="headertitle">Notes</span></Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/Serkan"><span className="headertitle">Home</span></Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/notes"><span className="headertitle">Notes</span></Link></li>}
                         {isUserLoggedIn && <li><Link className="nav-link" to="/search"><span className="headertitle">Search</span></Link></li>}
                         {isUserLoggedIn && <li><Link className="nav-link" to="/aboutme"><span className="headertitle">About Me</span></Link></li>}
 

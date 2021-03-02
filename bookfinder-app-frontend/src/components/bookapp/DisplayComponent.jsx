@@ -11,7 +11,7 @@ import AuthenticatedRoute from './AuthenticatedRoute'
 import SearchComponent from './SearchComponent'
 import ContactComponent from './ContactComponent'
 import AboutMe from './AboutMe'
-import TodoComponent from './TodoComponent'
+import EditComponent from './EditComponent'
 
 class DisplayComponent extends Component {
   render() {
@@ -24,8 +24,8 @@ class DisplayComponent extends Component {
               <Route path="/login" component={LoginComponent}/>
               
               <AuthenticatedRoute exact path="/welcome/:name" render={(props) => <WelcomeComponent {...props}/>}/>
-              <AuthenticatedRoute  excat path="/todos/:id" render={(props) => <TodoComponent {...props}/>}/>
-              <AuthenticatedRoute exact path="/todos" component={NotesComponent}/>
+              <AuthenticatedRoute  excat path="/notes/:id" render={(props) => <EditComponent {...props}/>}/>
+              <AuthenticatedRoute exact path="/notes" component={NotesComponent}/>
               <AuthenticatedRoute excat path="/search" component={SearchComponent}/>
               <AuthenticatedRoute excat path="/logout" component={LogoutComponent}/>
               <AuthenticatedRoute excat path="/aboutme" component={AboutMe}/>

@@ -95,11 +95,15 @@ i {
     margin-top: 60px;
 }
 
-.container {
-    margin-top: 90px;
-}
-
 .welcomename {
     font-size: 30px;
     color: rebeccapurple
+}
+
+.container-2 {
+    margin-top: 100px;
+}
+
+#tododescription {
+    margin-top: 80px;
 }

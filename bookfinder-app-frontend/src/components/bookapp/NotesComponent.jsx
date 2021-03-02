@@ -4,15 +4,15 @@ import AuthenticationService from "./AuthenticationService.jsx";
 import moment from "moment";
 class NotesComponent extends Component {
   constructor(props) {
-    console.log("constructor");
+    
     super(props);
     this.state = {
-      todos: [],
+      notes: [],
       message: "",
     };
   }
   componentDidMount = () => {
-    console.log("componentDidMount");
+    
     this.refreshTodos();
     console.log(this.state);
   };
@@ -21,7 +21,7 @@ class NotesComponent extends Component {
     let username = AuthenticationService.getLoggedInUserName();
     TodoDataService.retrieveAllTodos(username).then((response) => {
       console.log(response);
-      this.setState({ todos: response.data });
+      this.setState({ notes: response.data });
     });
   };
   deleteTodoClicked = (id) => {
@@ -34,17 +34,17 @@ class NotesComponent extends Component {
   };
   updateTodoClicked = (id) => {
     // console.log("update " + id);
-    this.props.history.push(`/todos/${id}`);
+    this.props.history.push(`/notes/${id}`);
   };
   addTodoClicked = () => {
-    this.props.history.push(`/todos/-1`);
+    this.props.history.push(`/notes/-1`);
   };
 
   render() {
-    // console.log("render");
+  
     return (
       <div>
-        <h1>Notes</h1>
+        <h4 >Notes</h4>
         {this.state.message && (
           <div className="alert alert-success">{this.state.message}</div>
         )}
@@ -60,7 +60,7 @@ class NotesComponent extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.todos.map((todo) => (
+              {this.state.notes.map((todo) => (
                 <tr key={todo.id}>
                   <td>{todo.description}</td>
                   <td>{todo.done.toString()}</td>

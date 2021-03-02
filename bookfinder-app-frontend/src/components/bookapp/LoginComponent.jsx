@@ -46,7 +46,7 @@ class LoginComponent extends Component {
         return (
             <div>
                 <h1>Login</h1>
-                <div className="container">
+                <div className="logincomp">
                     {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
                     {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
                     {this.state.showSuccessMessage && <div>Login Sucessful</div>}

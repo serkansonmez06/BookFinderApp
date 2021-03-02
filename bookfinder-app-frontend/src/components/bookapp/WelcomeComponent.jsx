@@ -26,7 +26,7 @@ class WelcomeComponent extends Component {
   render() {
     return (
         <div>
-        <div className="container">
+        <div className="container-2">
             <h1>Welcome!</h1>
             <div className="welcomename">
            {this.props.match.params.name}
