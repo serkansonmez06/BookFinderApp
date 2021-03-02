@@ -4,7 +4,6 @@ import AuthenticationService from "./AuthenticationService.jsx";
 import moment from "moment";
 class NotesComponent extends Component {
   constructor(props) {
-    
     super(props);
     this.state = {
       notes: [],
@@ -12,7 +11,6 @@ class NotesComponent extends Component {
     };
   }
   componentDidMount = () => {
-    
     this.refreshTodos();
     console.log(this.state);
   };
@@ -37,14 +35,14 @@ class NotesComponent extends Component {
     this.props.history.push(`/notes/${id}`);
   };
   addTodoClicked = () => {
+    console.log("add");
     this.props.history.push(`/notes/-1`);
   };
 
   render() {
-  
     return (
       <div>
-        <h4 >Notes</h4>
+        <h4>Notes</h4>
         {this.state.message && (
           <div className="alert alert-success">{this.state.message}</div>
         )}
@@ -52,23 +50,28 @@ class NotesComponent extends Component {
           <table className="table">
             <thead>
               <tr>
+                <th>Author</th>
+                <th>Name Of The Book</th>
+
                 <th>Description</th>
-                <th>IsCompleted?</th>
-                <th>Target Date</th>
+                <th>Date</th>
                 <th>Update</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody>
-              {this.state.notes.map((todo) => (
-                <tr key={todo.id}>
-                  <td>{todo.description}</td>
-                  <td>{todo.done.toString()}</td>
-                  <td>{moment(todo.targetDate).format("YYYY-MM-DD")}</td>
+              {this.state.notes.map((note) => (
+                <tr key={note.id}>
+                  <td>{note.author}</td>
+                  <td>{note.nameofthebook}</td>
+
+                  <td>{note.description}</td>
+
+                  <td>{moment(note.targetDate).format("YYYY-MM-DD")}</td>
                   <td>
                     <button
                       className="btn btn-info"
-                      onClick={() => this.updateTodoClicked(todo.id)}
+                      onClick={() => this.updateTodoClicked(note.id)}
                     >
                       Update
                     </button>
@@ -76,7 +79,7 @@ class NotesComponent extends Component {
                   <td>
                     <button
                       className="btn btn-danger"
-                      onClick={() => this.deleteTodoClicked(todo.id)}
+                      onClick={() => this.deleteTodoClicked(note.id)}
                     >
                       Delete
                     </button>

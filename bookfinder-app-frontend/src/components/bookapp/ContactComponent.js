@@ -5,8 +5,6 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 // import { connect } from "react-redux";
 // import { addContactMessage } from "../../redux/actions/actionCategories";
 
-
-
 class ContactComponent extends Component {
   state = {
     name: "",
@@ -106,5 +104,5 @@ class ContactComponent extends Component {
 //   };
 // }
 
-export default (ContactComponent);
+export default ContactComponent;
 //connect(mapStateToProps)

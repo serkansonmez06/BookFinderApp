@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Footer } from "mdbreact"; //imported icons
 
-
 function FooterComponent() {
   return (
     <Footer
@@ -18,7 +17,7 @@ function FooterComponent() {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa fa-facebook" > </i>
+              <i className="fa fa-facebook"> </i>
             </a>
           </li>
           <li className="list-inline-item">
@@ -55,9 +54,7 @@ function FooterComponent() {
       </div>
       <div className="footer-copyright text-center">
         <Container fluid>
-          <span>
-            &copy; {new Date().getFullYear()} Copyright: Book Club.
-          </span>
+          <span>&copy; {new Date().getFullYear()} Copyright: Book Club.</span>
         </Container>
       </div>
     </Footer>

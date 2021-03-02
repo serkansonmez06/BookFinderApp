@@ -15,7 +15,7 @@ import axios from 'axios';
 import BookCard from './BookCard';
 function SearchComponent() {
   // States
-  const [maxResults, setMaxResults] = useState(9);
+  const [maxResults, setMaxResults] = useState(15);
   const [startIndex, setStartIndex] = useState(1);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);

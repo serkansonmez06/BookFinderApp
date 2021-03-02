@@ -107,3 +107,10 @@ i {
 #tododescription {
     margin-top: 80px;
 }
+
+@media screen and (width:500px) {
+    body {
+        height: 400px;
+        width: 400px;
+    }
+}

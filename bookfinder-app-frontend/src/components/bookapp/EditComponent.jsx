@@ -10,24 +10,34 @@ class EditComponent extends Component {
 
     this.state = {
       id: this.props.match.params.id,
+      author: "",
+      nameofthebook: "",
+      isbn: "",
       description: "",
-   
-      targetDate : moment(new Date()).format('YYYY-MM-DD')
+      targetDate: moment(new Date()).format("YYYY-MM-DD"),
     };
   }
+
   componentDidMount = () => {
     if (this.state.id === -1) {
       return;
     }
 
     let username = AuthenticationService.getLoggedInUserName();
-    TodoDataService.retrieveAllTodos(username, this.state.id).then((response) =>
+
+    TodoDataService.retrieveTodo(username, this.state.id).then((response) =>
       this.setState({
+        author: response.data.author,
+        nameofthebook: response.data.nameofthebook,
         description: response.data.description,
+        targetDate: response.data.targetDate,
+        description: response.data.description,
+
         targetDate: moment(response.data.targetDate).format("YYYY-MM-DD"),
       })
     );
   };
+
   validate = (values) => {
     let errors = {};
     if (!values.description) {
@@ -48,14 +58,17 @@ class EditComponent extends Component {
 
     let todo = {
       id: this.state.id,
+
+      id: this.state.id,
+      author: values.author,
+      nameofthebook: values.nameofthebook,
       description: values.description,
-      
       targetDate: values.targetDate,
     };
 
     if (this.state.id === -1) {
       TodoDataService.createTodo(username, todo).then(() =>
-        this.props.history.push("/notes")
+        this.props.history.push("/todos")
       );
     } else {
       TodoDataService.updateTodo(username, this.state.id, todo).then(() =>
@@ -67,15 +80,14 @@ class EditComponent extends Component {
   };
 
   render() {
-    let { description, targetDate } = this.state;
-    //let targetDate = this.state.targetDate
+    let { author, nameofthebook, description, targetDate } = this.state;
 
     return (
       <div>
         {/* <h1>Todo</h1> */}
         <div className="container" id="tododescription">
           <Formik
-            initialValues={{ description , targetDate }}
+            initialValues={{ author, nameofthebook, description, targetDate }}
             onSubmit={this.onSubmit}
             validateOnChange={false}
             validateOnBlur={false}
@@ -84,17 +96,19 @@ class EditComponent extends Component {
           >
             {(props) => (
               <Form>
-                <ErrorMessage
-                  name="description"
-                  component="div"
-                  className="alert alert-warning"
-                />
-                <ErrorMessage
-                  name="targetDate"
-                  component="div"
-                  className="alert alert-warning"
-                />
-              
+                <fieldset className="form-group">
+                  <label>Author</label>
+                  <Field className="form-control" type="text" name="author" />
+                </fieldset>
+
+                <fieldset className="form-group">
+                  <label>Name Of The Book </label>
+                  <Field
+                    className="form-control"
+                    type="text"
+                    name="nameofthebook"
+                  />
+                </fieldset>
 
                 <fieldset className="form-group">
                   <label>Description</label>
