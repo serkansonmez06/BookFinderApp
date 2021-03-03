@@ -52,7 +52,6 @@ class NotesComponent extends Component {
               <tr>
                 <th>Author</th>
                 <th>Name Of The Book</th>
-
                 <th>Description</th>
                 <th>Date</th>
                 <th>Update</th>
